@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form method = "POST" action = "">
+        {{ form.hidden_tag() }}
+        <fieldset class = "form-group">
+            <div class = "row container ml-1 pl-1">
+                <!-- Area form -->
+                <div class = "col-sm-4 form-group">
+                    {{ form.area.label(class = "text-light") }}
+                    {% if form.area.errors %}
+                        {{ form.area(class = "form-control form-control-lg is-invalid", placeholder = form.area.description) }}
+                        <div class = "invalid-feedback">
+                            {% for error in form.area.errors %}
+                                <span class = "text-danger"> {{ error }} </span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.area(class = "form-control form-control-lg", placeholder = form.area.description) }}
+                    {% endif %}
+                </div>
+                <!-- Bedroom form -->
+                <div class = "col-sm-4 form-group">
+                    {{ form.bedroom.label(class = "text-light") }}
+                    {% if form.bedroom.errors %}
+                        {{ form.bedroom(class = "form-control form-control-lg is-invalid", placeholder = form.bedroom.description) }}
+                        <div class = "invalid-feedback">
+                            {% for error in form.bedroom.errors %}
+                                <span class = "text-danger"> {{ error }} </span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bedroom(class = "form-control form-control-lg", placeholder = form.bedroom.description) }}
+                    {% endif %}
+                </div>
+                <!-- Bathroom form -->
+                <div class = "col-sm-4 form-group">
+                    {{ form.bathroom.label(class = "text-light") }}
+                    {% if form.bathroom.errors %}
+                        {{ form.bathroom(class = "form-control form-control-lg is-invalid", placeholder = form.bathroom.description) }}
+                        <div class = "invalid-feedback">
+                            {% for error in form.bathroom.errors %}
+                                <span class = "text-danger"> {{ error }} </span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bathroom(class = "form-control form-control-lg", placeholder = form.bathroom.description) }}
+                    {% endif %}                   
+                </div>
+                <!-- Furnishing form -->
+                <div class = "col-sm-4 form-group">
+                    {{ form.furnishing.label(class = "text-light") }}
+                    {% if form.furnishing.errors %}
+                        {{ form.furnishing(class = "form-control form-control-lg is-invalid", placeholder = form.furnishing.description) }}
+                        <div class = "invalid-feedback">
+                            {% for error in form.furnishing.errors %}
+                                <span class = "text-danger"> {{ error }} </span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.furnishing(class = "form-control form-control-lg", placeholder = form.furnishing.description) }}
+                    {% endif %}
+                </div>
+                <!-- Transaction form -->
+                <div class = "col-sm-4 form-group">
+                    {{ form.transaction.label(class = "text-light") }}
+                    {% if form.transaction.errors %}
+                        {{ form.transaction(class = "form-control form-control-lg is-invalid", placeholder = form.transaction.description) }}
+                        <div class = "invalid-feedback">
+                            {% for error in form.transaction.errors %}
+                                <span class = "text-danger"> {{ error }} </span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.transaction(class = "form-control form-control-lg", placeholder = form.transaction.description) }}
+                    {% endif %}
+                </div>
+                <!-- Locality form -->
+                <div class = "col-sm-4 form-group">
+                    {{ form.locality.label(class = "text-light") }}
+                    {% if form.locality.errors %}
+                        {{ form.locality(class = "form-control form-control-lg is-invalid", placeholder = form.locality.description) }}
+                        <div class = "invalid-feedback">
+                            {% for error in form.locality.errors %}
+                                <span class = "text-danger"> {{ error }} </span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.locality(class = "form-control form-control-lg", placeholder = form.locality.description) }}
+                    {% endif %}
+                </div>
+                <!-- Predict form -->
+                <div class = "form-group container text-center">
+                    {{ form.v_predicted(class = "mt-5 btn btn-info font-weight-bold text-light submit") }}
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    
+{% endblock content %}
