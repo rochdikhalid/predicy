@@ -1,4 +1,4 @@
-# predicy
+# Predicy
 A simple machine learning based web application built with Flask to predict real estate prices in New Delhi.
 ## Notebook Setup
 * **1-** Go to the [Anaconda website](https://www.anaconda.com/) to install *Anaconda*, it's preferable to have the latest version of Python for the appropriate architecture.
