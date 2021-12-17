@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+            <title> Predicy&copy; | {{ title }} </title>
+        {% else %}
+            <title> Predicy&copy; </title>
+        {% endif %}
+        <!-- Latest compiled and minified CSS -->
+        <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Montserrat font -->
+        <link href = "https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel = "stylesheet">
+        <!-- Linked CSS file -->
+        <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename = 'style.css')}}">
+    </head>
+    <body>
+        <div class = "container">
+            <!-- Navbar -->
+            <header>
+                <nav class = "navbar navbar-expand-lg navbar-dark">
+                    <a class = "navbar-brand font-weight-bolder" href = "{{url_for('home')}}"> Predicy </a>
+                    <ul class = "navbar-nav ml-auto">
+                        <li class = "nav-item">
+                            <a class = "nav-link" href = "#"> About </a>
+                        </li>
+                        <li class = "nav-item">
+                            <a class = "nav-link" href = "{{url_for('home')}}"> Home </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- Display flask flash messages -->
+            <div class = "container mt-2">
+                {% with messages = get_flashed_messages(with_categories = true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class = "alert alert-{{category}} font-weight-bolder"> {{ message }} </div> 
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>
