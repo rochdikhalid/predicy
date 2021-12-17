@@ -5,7 +5,15 @@ A simple machine learning based web application built with Flask to predict real
 * **2-** Use **Jupyter** or **Jupyter lab** to open up the notebook.
 ## Application Setup
 * **1-** Use the **requirement.txt** file to install the dependencies:<br>
+`pip install -r requirements.txt`
+  ### Virtual Environment Configuration (optional)
+  * **a-** Create a new virtual environment using the following command:<br>
+  `python3 -m venv <name_of_virtualenv>`
+  * **b-** Install the dependencies as highlighted below using the requirement.txt file:<br>
   `pip install -r requirements.txt`
+  * **c-** Make sure all dependencies are installed correctly:<br>
+  `pip freeze`
+  <br>
 * **2-** Run the Flask server using the following command:<br>
-  `python run.py`
+`python run.py`
 * **3-** Navigate to **http://127.0.0.1:5000/** and start playing around with **Predicy**.
