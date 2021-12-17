@@ -1,4 +1,4 @@
-from predicy import app
+from core import app
 
 
 
